@@ -1,11 +1,4 @@
 
-          <nav class="blog-pagination">
-            <a class="btn btn-outline-primary" href="#">Older</a>
-            <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-          </nav>
-
-        </div><!-- /.blog-main -->
-
         <aside class="col-md-4 blog-sidebar">
         <div class="p-3 mb-3 rounded">
             <h4>Countries</h4>
@@ -45,17 +38,18 @@
         </aside><!-- /.blog-sidebar -->
 
       </div><!-- /.row -->
-
+      </div>
     </main><!-- /.container -->
     <footer class="blog-footer">
     <div class="nav-scroller py-1 mb-2">
         <?php
-            wp_nav_menu(
+           wp_nav_menu(
                 [
                     'menu' => 'footer', 
                     'container' => '',
                     'theme_location' => 'footer',
-                    'items_wrap' => '<nav id="" class="nav d-flex justify-content-center">%3$s</nav>'
+                    'items_wrap' => '<nav id="" class="nav d-flex justify-content-center">%3$s</nav>',
+                    'walker' => new $GLOBALS['eu_blue_card_env']['custom_menu_walker']()
                 ]
             ); 
         ?>
