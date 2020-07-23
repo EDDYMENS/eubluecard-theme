@@ -141,3 +141,12 @@ Author URI: https://eddymens.com
   .list-group-item {
       cursor: pointer;
   }
+  
+.child-comment { 
+    margin-left: 50px;
+    display: block;
+}
+
+.comment-time {
+  font-size: 12px;
+}

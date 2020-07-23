@@ -1,59 +1,53 @@
-
-        <aside class="col-md-4 blog-sidebar">
-        <div class="p-3 mb-3 rounded">
-            <h4>Countries</h4>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item active">Germany</li>
-                <li class="list-group-item">Luxembourg</li>
-                <li class="list-group-item">Sweden</li>
-                <li class="list-group-item">Netherlands</li>
-            </ul>
-          </div>
+<aside class="col-md-4 blog-sidebar">
+            <div class="p-3 mb-3 rounded">
+                <h4>Countries</h4>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item active">Germany</li>
+                    <li class="list-group-item">Luxembourg</li>
+                    <li class="list-group-item">Sweden</li>
+                    <li class="list-group-item">Netherlands</li>
+                </ul>
+             </div>
           <div class="p-3">
             <h4 class="font-italic">Recent Posts</h4>
             <ol class="list-unstyled mb-0">
-              <li><a href="#">How do I upgrade my paid account/subscription?</a></li>
-              <li><a href="#">I bought the Lifetime offer (Individual plan), can I upgrade later?</a></li>
-              <li><a href="#">How To Track Your Competitors’ Rankings</a></li>
+            <?php $recent_posts = get_posts('numberposts=5');
+              if($recent_posts) { ?>
+                      <?php foreach( $recent_posts as $recent ) { ?>
+                      <li>
+                      <a href="<?php echo get_permalink($recent->ID); ?>"><?php echo $recent->post_title; ?></a>
+                      </li>
+                      <?php } ?>
+              <?php } ?>
             </ol>
           </div>
-
           <div class="p-3">
             <h4 class="font-italic">Archives</h4>
             <ol class="list-unstyled">
-            <li><a href="#">March 2014</a></li>
-              <li><a href="#">February 2014</a></li>
-              <li><a href="#">January 2014</a></li>
-              <li><a href="#">December 2013</a></li>
-              <li><a href="#">November 2013</a></li>
-              <li><a href="#">October 2013</a></li>
-              <li><a href="#">September 2013</a></li>
-              <li><a href="#">August 2013</a></li>
-              <li><a href="#">July 2013</a></li>
-              <li><a href="#">June 2013</a></li>
-              <li><a href="#">May 2013</a></li>
-              <li><a href="#">April 2013</a></li>
+              <?php wp_get_archives(); ?>
             </ol>
           </div>
-        </aside><!-- /.blog-sidebar -->
+       </aside><!-- /.blog-sidebar -->
 
       </div><!-- /.row -->
-      </div>
     </main><!-- /.container -->
-    <footer class="blog-footer">
-    <div class="nav-scroller py-1 mb-2">
-        <?php
-           wp_nav_menu(
-                [
-                    'menu' => 'footer', 
-                    'container' => '',
-                    'theme_location' => 'footer',
-                    'items_wrap' => '<nav id="" class="nav d-flex justify-content-center">%3$s</nav>',
-                    'walker' => new $GLOBALS['eu_blue_card_env']['custom_menu_walker']()
-                ]
-            ); 
-        ?>
-    </div>
+<footer class="blog-footer">
+        <div class="nav-scroller py-1 mb-2">
+            <?php
+            wp_nav_menu(
+                    [
+                        'menu' => 'footer', 
+                        'container' => '',
+                        'theme_location' => 'footer',
+                        'items_wrap' => '<nav id="" class="nav d-flex justify-content-center">%3$s</nav>',
+                        'walker' => new $GLOBALS['eu_blue_card_env']['custom_menu_walker']()
+                    ]
+                ); 
+            ?>
+        </div>
     </footer>
   </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>
