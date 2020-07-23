@@ -16,7 +16,7 @@ $fields =  array(
     $comments_args = array(
  
         // change "Leave a Reply" to "Comment"
-        'title_reply'=>'Share your thoughts ?',
+        'title_reply'=>'Share your thoughts',
         'fields' => apply_filters( 'comment_form_default_fields', $fields ),
         'comment_field' =>  '<p class="comment-form-comment"><div class="form-group"><label for="comment">' . _x( 'Comment', 'noun' ) .
             '</label><textarea id="comment" name="comment" class="form-control"  rows="8" aria-required="true">' .
