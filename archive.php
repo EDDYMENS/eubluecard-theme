@@ -13,6 +13,7 @@
             <h2 class="blog-post-title"><a class="text-muted" href="<?php the_permalink(get_the_ID()) ?>"><?php the_title(); ?></a></h2>
 
             <p class="blog-post-meta"><?php the_date(); ?> by <?php the_author(); ?></p>
+            <?php the_excerpt(); ?><a href="<?php the_permalink(get_the_ID()) ?>" >Read more &rarr;</a>
           </div><!-- /.blog-post -->
 
             <?php }

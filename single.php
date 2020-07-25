@@ -18,7 +18,7 @@
                 ?>
             </div><!-- /.blog-post -->
             <?php 
-                get_template_part('comments');
+                comments_template();
             ?>
         </div>
 <?php get_footer(); ?>
