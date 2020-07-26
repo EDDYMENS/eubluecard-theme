@@ -2,9 +2,12 @@
     <main role="main" class="container">
       <div class="row mt-5">
         <div class="col-md-8 blog-main">
-          <h3 class="pb-3 mb-4 font-italic border-bottom">
-            <?php $current_category = get_the_category()[0]; ?>
-            <?= $current_category->name; ?>
+            <?php 
+                $categories = get_the_category();
+                $current_category = ($categories)? $categories[0]:false;
+            ?>
+          <h3 class="pb-3 mb-4 <?= ($current_category)?'border-bottom':'' ?> font-italic">
+            <?= ($current_category)? $current_category->name : ""; ?>
           </h3>
           <?php 
           if ( have_posts() ) {

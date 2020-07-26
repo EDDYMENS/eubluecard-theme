@@ -5,13 +5,13 @@ $fields =  array(
     '<p class="comment-form-author"><div class="form-group"><label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' .
     ( $req ? '<span class="required">*</span>' : '' ) .
     '<input id="author" class="form-control" required="" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-    '" ' . $aria_req . ' /></div></p>',
+    '"/></div></p>',
  
   'email' =>
     '<p class="comment-form-email"><div class="form-group"><label for="email">' . __( 'Email', 'domainreference' ) . '</label> ' .
     ( $req ? '<span class="required">*</span>' : '' ) .
     '<input id="email" name="email" required="" class="form-control" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-    '" ' . $aria_req . ' /></div></p>',
+    '"/></div></p>',
 );
     $comments_args = array(
  
