@@ -150,3 +150,7 @@ Author URI: https://eddymens.com
 .comment-time {
   font-size: 12px;
 }
+
+.muted-inner-anchor > a {
+  color: #6c757d!important;
+}

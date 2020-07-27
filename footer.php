@@ -1,12 +1,18 @@
 <aside class="col-md-4 blog-sidebar">
             <div class="p-3 mb-3 rounded">
                 <h4>Countries</h4>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item active">Germany</li>
-                    <li class="list-group-item">Luxembourg</li>
-                    <li class="list-group-item">Sweden</li>
-                    <li class="list-group-item">Netherlands</li>
-                </ul>
+               
+                <?php
+                wp_nav_menu(
+                        [
+                            'menu' => 'country', 
+                            'container' => '',
+                            'theme_location' => 'country',
+                            'items_wrap' => '<ul class="list-group list-group-flush">%3$s</ul>',
+                            'walker' => (new $GLOBALS['eu_blue_card_env']['custom_menu_walker']())->setAttribute('class="list-group-item text-muted"')
+                        ]
+                    ); 
+            ?>
              </div>
           <div class="p-3">
             <h4 class="font-italic">Recent Posts</h4>
@@ -15,7 +21,7 @@
               if($recent_posts) { ?>
                       <?php foreach( $recent_posts as $recent ) { ?>
                       <li>
-                      <a href="<?php echo get_permalink($recent->ID); ?>"><?php echo $recent->post_title; ?></a>
+                      <a class="text-muted" href="<?php echo get_permalink($recent->ID); ?>"><?php echo $recent->post_title; ?></a>
                       </li>
                       <?php } ?>
               <?php } ?>
@@ -24,7 +30,11 @@
           <div class="p-3">
             <h4 class="font-italic">Archives</h4>
             <ol class="list-unstyled">
-              <?php wp_get_archives(); ?>
+              <?php wp_get_archives([
+                'format' => 'custom',
+                'before' => '<li class="muted-inner-anchor">',
+                'after' => '</li>'
+                ]); ?>
             </ol>
           </div>
        </aside><!-- /.blog-sidebar -->

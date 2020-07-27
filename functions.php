@@ -26,7 +26,8 @@ add_action( 'wp_enqueue_scripts', 'eubluecard_register_styles' );
 function eubluecard_menus() {
     $locations = [
         'primary' => 'Header Menu', 
-        'footer' => 'Footer Menu'
+        'footer' => 'Footer Menu',
+        'country' => 'Country Menu'
     ];
 
     register_nav_menus($locations);
