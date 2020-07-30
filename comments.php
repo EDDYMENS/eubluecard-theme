@@ -42,7 +42,7 @@ $fields =  array(
         <?=  ($comment->comment_content).'<br>'; ?>
         <?php
                     $commentChildren = get_comments(array(
-                        'parent'   => $commment->ID,
+                        'parent'   => $comment->ID,
                         // 'status'    => 'approve',
                         'order'     => 'DESC',
                         'parent'    => $comment->comment_ID,
