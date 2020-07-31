@@ -41,7 +41,7 @@
 
       </div><!-- /.row -->
     </main><!-- /.container -->
-<footer class="blog-footer">
+<footer class="blog-footer container">
         <div class="nav-scroller py-1 mb-2">
             <?php
             wp_nav_menu(
@@ -49,14 +49,18 @@
                         'menu' => 'footer', 
                         'container' => '',
                         'theme_location' => 'footer',
-                        'items_wrap' => '<nav id="" class="nav d-flex justify-content-center">%3$s</nav>',
+                        'items_wrap' => '<nav id="" class="nav d-flex justify-content-between">%3$s</nav>',
                         'walker' => new $GLOBALS['eu_blue_card_env']['custom_menu_walker']()
                     ]
                 ); 
             ?>
         </div>
+        <p class="mt-5">Copyright - All Right Reserved © <?= date('Y'); ?>- <a href="https://eddymens.com">Eddymens</a></p>
     </footer>
   </body>
+  <?php
+   wp_footer();
+  ?>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

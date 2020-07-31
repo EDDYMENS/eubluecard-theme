@@ -6,10 +6,10 @@
                 <?php the_title(); ?>
           </h2>
           <?php 
-          if ( have_posts() ) {
+          if ( have_posts()) {
             while ( have_posts() ) {
-         
-          the_post(); ?>
+                the_post();
+          ?>
          <div class="blog-post">
              <?php the_content(); ?>
           </div><!-- /.blog-post -->
